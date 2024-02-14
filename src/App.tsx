@@ -1,26 +1,13 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import ErrorBoundary from "./pages/error_boundary/ErrorBoundary";
+import Counter from "./pages/counter/Counter";
+import ErrorPage from "./pages/error_page/ErrorPage";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ErrorBoundary ErrorPage={<ErrorPage />}>
+      <Counter />
+    </ErrorBoundary>
   );
 }
-
 export default App;
